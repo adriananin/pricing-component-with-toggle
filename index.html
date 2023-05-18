@@ -12,26 +12,36 @@
     />
     <link rel="stylesheet" href="css/style.css" />
 
+    <script src="index.js" defer></script>
+
     <title>Pricing Component</title>
   </head>
+
   <body>
     <header class="header">
       <h2 class="header__heading">Our Pricing</h2>
       <div class="header__toggle">
         <p class="header__text">Annually</p>
-        <div class="checbox">Check</div>
+        <div class="header__checkbox">
+          <label class="header__toggle-switch">
+            <input type="checkbox" id="toggle-period" />
+            <span class="toggle__slider"></span>
+          </label>
+        </div>
         <p class="header__text">Monthly</p>
       </div>
     </header>
+
     <div class="svg--top">
-      <img src="images/bg-top.svg" alt="svg line pattern" />
+      <img src="images/bg-top.svg" alt="line pattern" />
     </div>
+
     <main>
       <div class="card card--basic">
         <p class="card__title">Basic</p>
         <div class="card__price">
           <div class="card__symbol">&dollar;</div>
-          <p class="card__price-text">19.99</p>
+          <p class="card__price-text" id="basic-price">199.99</p>
         </div>
         <hr />
         <p class="card__text">500 GB Storage</p>
@@ -47,7 +57,7 @@
         <p class="card__title">Professional</p>
         <div class="card__price">
           <div class="card__symbol">&dollar;</div>
-          <p class="card__price-text">24.99</p>
+          <p class="card__price-text" id="professional-price">249.99</p>
         </div>
         <hr />
         <p class="card__text">1 TB Storage</p>
@@ -63,7 +73,7 @@
         <p class="card__title">Master</p>
         <div class="card__price">
           <div class="card__symbol">&dollar;</div>
-          <p class="card__price-text">39.99</p>
+          <p class="card__price-text" id="master-price">399.99</p>
         </div>
         <hr />
         <p class="card__text">2 TB Storage</p>
@@ -74,7 +84,10 @@
         <hr />
         <button class="card__button">Learn More</button>
       </div>
+
+      <div class="svg--bottom">
+        <img src="images/bg-bottom.svg" alt="circle pattern" />
+      </div>
     </main>
-    <!-- &dollar;199.99 &dollar;249.99 &dollar;399.99 -->
   </body>
 </html>

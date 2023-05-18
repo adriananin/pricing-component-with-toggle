@@ -32,11 +32,6 @@ hr {
   color: #6e728e;
 }
 
-.header {
-  position: relative;
-  overflow: hidden;
-}
-
 .header__heading {
   color: #6e728e;
   font-size: 32px;
@@ -62,6 +57,10 @@ hr {
   left: 196px;
   top: -87px;
   z-index: -1;
+}
+
+.svg--bottom {
+  display: none;
 }
 
 .card {
@@ -147,4 +146,119 @@ hr {
 
 .card--master {
   margin-bottom: 50px;
+}
+
+/* Styles for the checkbox */
+
+.header__checkbox:hover {
+  cursor: pointer;
+}
+
+.header__toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.header__toggle-switch input {
+  display: none;
+}
+
+.toggle__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--purple);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle__slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle__slider {
+  background-image: var(--purple);
+}
+
+input:checked + .toggle__slider::before {
+  transform: translateX(26px);
+}
+
+/* Desktop Styling */
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    place-items: center;
+    gap: 0px;
+    overflow-y: hidden;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .card {
+    width: 380px;
+  }
+
+  .card--basic {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .card--master {
+    margin-bottom: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .card--professional {
+    height: 520px;
+  }
+
+  .card--professional .card__button:hover {
+    background: var(--purple);
+    color: white;
+    border: 2px solid white;
+  }
+
+  .card__button:hover {
+    background: white;
+    color: #6d72de;
+    border: 2px solid #6d72de;
+    cursor: pointer;
+  }
+
+  .svg--top {
+    position: absolute;
+    left: 1206px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  .svg--bottom {
+    display: block;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    z-index: -1;
+  }
 }
